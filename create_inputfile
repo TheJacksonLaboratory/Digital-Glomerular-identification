@@ -1,0 +1,7 @@
+#find and format input fo;der, write into list - tail or sed. Sed is faster for very large files.
+find . -type d -name "*" | sed 's/^\.\///' | xargs -n1 -I{} echo $PWD'/'{} | tail -n +2 > input_dir.list
+find . -type d -name "*" | sed 's/^\.\///' | xargs -n1 -I{} echo $PWD'/'{} | sed -e '1d' > input_dir.list
+#count all tiff files in all directories and sub-dirs
+q
+
+cd
