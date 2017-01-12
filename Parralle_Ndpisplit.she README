@@ -1,0 +1,5 @@
+This is a sctipt for runing a job arrray for the extraction of *.tif Images from *.ndpi Images.  in order to run put this script into a folder with */ndpi Images.  then Run 
+bash parallele_ndpispli.sh  
+
+There might be a size limit to running multuiple at the same time I can run 15 *.ndpi files but it appears as not 30.  
+
