@@ -1,0 +1,22 @@
+
+Kidneys were placed in 4% paraformaldehyde in phosphate buffered saline for 24 hours prior to paraffin embedding using a Sakura VIP processor. Sections 4um thick were stained using the Periodic acid schiff reaction performed by the histology service at The Jackson Laboratory.
+
+We used Ilastik as developed. User manuals and documentation can be found at http://ilastik.org/documentation/index.html. 
+Our trained classifier as well as images used for training can be found at ftp://ftp.jax.org/sms/GlomIDDec2017.ilp.zip or by request. 
+
+The Images used for training can be found https://github.com/TheJacksonLaboratory/Digital-Glomerular-identification. We used 108 images and trained on three classes (‘glomerular tuft’, ‘bowmen space’ and ‘other’).
+
+ImageJ was downloaded using the Fiji package http://imagej.net/Fiji/Downloads.
+
+We exported Segment files as .tiff from Ilastik and opened them in ImageJ, where we processed them by using the enhance contrast and Gaussian blur tools to identify regions of interest that correspond to glomeruli tufts. The corresponding original image was then opened and thresholds applied to obtain disease scores. 
+
+Mesangial matrix expansion is scored by separating the image into hue, brightness, and saturation channels and setting a threshold in the saturation channel per batch, usually around 80-255. 
+
+Nuclei counts and area are obtained by using the hue channel between 0-180: area is measured for the glomerular tuft region of interest where cell counts are obtained by using the region of interest to crop the original image, thresholded hue, and combined with the 3D objects counter tool. 
+
+Similarly, capillary openness is obtained using the region of interest in the brightness channel between 215-255.
+
+Specific tools used and macros to allow for batch processing, both using a graphic user interface and command line, can be found at https://github.com/TheJacksonLaboratory/Digital-Glomerular-identification. 
+
+In order to keep analysis simple and attainable to everyone, precision, recall,and F-measure calculations were performed at an object level. We did this by first visually counting glomeruli in an image to obtain expected results per image. The result per image after classification in Ilastik and initial ImageJ processing was superimposed upon the original image. The number of glomerular tufts identified were compared to the number identified by eye, taking into account location within the image. Correlation between several tuft characteristics obtained by both human and digital classification was also performed.
+
