@@ -5,3 +5,9 @@ Code will be provided to run both in Graphical user Interface (GUI)  macros for 
 
 
 This assumes that you have a working ilastik classifier. 
+
+
+We provide a link to ours here 
+https://storage.googleapis.com/korstanje-public-data/GlomIDDec2017.ilp
+
+With a link to the Images used to train it 
